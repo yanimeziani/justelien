@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+/* daisyUI 5 as a Tailwind plugin */
+@plugin "daisyui" {
+  themes: false;
+  logs: false;
+}
+
+@plugin "daisyui/theme" {
+  name: "justelien";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: #ffffff;
+  --color-base-200: #fbf9f5;
+  --color-base-300: #e6e2d8;
+  --color-base-content: #16241f;
+
+  --color-primary: #164e43;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #0c1e19;
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #cfa86a;
+  --color-accent-content: #0c1e19;
+
+  --radius-selector: 9999px;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+}
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-serif), "Newsreader", "Playfair Display", Georgia, serif;
+
+  --color-darkspruce: #0c1c18;
+  --color-forest: #164e43;
+  --color-forest-dark: #103b33;
+  --color-forest-light: #1d6154;
+  --color-emerald-banner: #0b382c;
+  --color-gold-accent: #cfa86a;
+  --color-gold-light: #deb887;
+  --color-ivory: #fbf9f5;
+  --color-cream: #f4f1ea;
+  --color-slate-navy: #0e2027;
+  --color-ink: #16241f;
+  --color-muted-text: #667670;
+  --color-hairline: #e6e2d8;
+}
+
+/* Custom pulse for active pin */
+@keyframes goldPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(207, 168, 106, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 16px rgba(207, 168, 106, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(207, 168, 106, 0);
+  }
+}
+
+.animate-gold-pulse {
+  animation: goldPulse 2.4s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f1ea;
+}
+::-webkit-scrollbar-thumb {
+  background: #cfa86a;
+  border-radius: 4px;
+}
