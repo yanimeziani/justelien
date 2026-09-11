@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { X, ShieldCheck, FileText, Gavel, Scale } from "@phosphor-icons/react";
+import { X, ShieldCheck, FileText, Gavel, Scales } from "@phosphor-icons/react";
 
 interface InfoModalProps {
   type: "privacy" | "terms" | "avocat" | "justice" | null;
@@ -92,7 +92,7 @@ export default function InfoModal({ type, onClose }: InfoModalProps) {
       case "justice":
         return {
           title: "Accès à la justice au Québec",
-          icon: <Scale size={24} className="text-[#deb887]" weight="fill" />,
+          icon: <Scales size={24} className="text-[#deb887]" weight="fill" />,
           subtitle: "Ressources communautaires et gouvernementales",
           body: (
             <div className="space-y-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
